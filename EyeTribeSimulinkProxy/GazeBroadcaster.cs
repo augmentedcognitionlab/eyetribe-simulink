@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
-using TETCSharpClient;
 using TETCSharpClient.Data;
+using TETCSharpClient;
 
 namespace EyeTribeSimulinkProxy
 {
@@ -18,9 +18,6 @@ namespace EyeTribeSimulinkProxy
 
 		public void OnGazeUpdate(GazeData gazeData)
 		{
-			double gX = gazeData.SmoothedCoordinates.X;
-			double gY = gazeData.SmoothedCoordinates.Y;
-
 			data [0] = gazeData.TimeStamp;
 			data [1] = gazeData.IsFixated ? 1 : 0;
 			data [2] = gazeData.SmoothedCoordinates.X;
