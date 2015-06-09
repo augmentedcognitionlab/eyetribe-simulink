@@ -21,8 +21,14 @@ public partial class MainWindow: Gtk.Window
 
 	protected void StartButtonPressed (object sender, EventArgs e)
 	{
-		toggleInterface ();
-		gb.Start (ipEntry.Text,int.Parse(portEntry.Text));
+		try {
+			gb.Start (ipEntry.Text, int.Parse (portEntry.Text));
+			toggleInterface ();
+		} catch (Exception ex) {
+			MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, ex.Message, new object[0]);
+			md.Run ();
+			md.Destroy ();
+		}
 	}
 
 	protected void StopButtonPressed (object sender, EventArgs e)
