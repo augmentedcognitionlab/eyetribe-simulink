@@ -69,4 +69,16 @@
       <Name>TETCSharpClient</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MacApp\" />
+    <Folder Include="MacApp\EyeTribeSimulinkProxy.app\" />
+    <Folder Include="MacApp\EyeTribeSimulinkProxy.app\Contents\" />
+    <Folder Include="MacApp\EyeTribeSimulinkProxy.app\Contents\MacOS\" />
+    <Folder Include="MacApp\EyeTribeSimulinkProxy.app\Contents\Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MacApp\EyeTribeSimulinkProxy.app\Contents\Info.plist" />
+    <None Include="MacApp\EyeTribeSimulinkProxy.app\Contents\MacOS\EyeTribeSimulinkProxy" />
+    <None Include="MacApp\EyeTribeSimulinkProxy.app\Contents\Resources\EyeTribeSimulinkProxy.icns" />
+  </ItemGroup>
 </Project>

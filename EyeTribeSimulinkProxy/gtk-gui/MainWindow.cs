@@ -27,7 +27,7 @@ public partial class MainWindow
 		// Widget MainWindow
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("Eye Tribe Simulink Proxy");
-		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+		this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 		this.BorderWidth = ((uint)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.vbox1 = new global::Gtk.VBox ();
@@ -132,7 +132,7 @@ public partial class MainWindow
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 400;
-		this.DefaultHeight = 97;
+		this.DefaultHeight = 100;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.startButton.Pressed += new global::System.EventHandler (this.StartButtonPressed);

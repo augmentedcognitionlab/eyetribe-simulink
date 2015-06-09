@@ -48,10 +48,13 @@ namespace EyeTribeSimulinkProxy
 		}
 
 		public void Stop() {
-			client.Close ();
-			if (GazeManager.Instance.IsActivated) {
-				GazeManager.Instance.ClearListeners ();
-				GazeManager.Instance.Deactivate ();
+			try {
+				client.Close ();
+				if (GazeManager.Instance.IsActivated) {
+					GazeManager.Instance.ClearListeners ();
+					GazeManager.Instance.Deactivate ();
+				}
+			} catch (Exception) {
 			}
 		}
 	}

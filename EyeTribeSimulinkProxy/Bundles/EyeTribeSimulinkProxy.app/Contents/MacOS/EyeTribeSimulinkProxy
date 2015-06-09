@@ -1,0 +1,17 @@
+#!/bin/sh
+# Author: Michael Hutchinson (mhutchinson@novell.com)
+ 
+DIR=$(cd "$(dirname "$0")"; pwd)
+MONO_FRAMEWORK_PATH=/Library/Frameworks/Mono.framework/Versions/Current
+export DYLD_FALLBACK_LIBRARY_PATH="$DIR:$MONO_FRAMEWORK_PATH/lib:/lib:/usr/lib"
+export PATH="$MONO_FRAMEWORK_PATH/bin:$PATH"
+ 
+# Work around a limitation in 'exec' in older versions of macosx
+OSX_VERSION=$(uname -r | cut -f1 -d.)
+if [ $OSX_VERSION -lt 9 ]; then  # If OSX version is 10.4
+	MONO_EXEC="exec mono"
+else
+	MONO_EXEC="exec -a appname mono"
+fi
+ 
+$MONO_EXEC "$DIR/EyeTribeSimulinkProxy.exe"
